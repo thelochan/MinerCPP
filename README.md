@@ -9,3 +9,7 @@ Output is based on 4 inputs: ./main.o {keyword} {data} {target} {mining mode}
 
 
 extern "C" {} was added to 'mine'
+
+
+
+Emscripten Syntax: emcc ./main.cpp ./sha256.cpp -I . -o mine.js -DENABLE_WASM=true -s NO_EXIT_RUNTIME=1 -s ALLOW_MEMORY_GROWTH=1  -s "EXPORTED_FUNCTIONS=['_mine']"
